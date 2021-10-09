@@ -1,0 +1,26 @@
+#php_value date.timezone 'Asia/Jakarta'
+RewriteEngine On
+#RewriteCond %{HTTPS} off
+#RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+RewriteBase /
+RewriteRule ^login$ login.php [L]
+RewriteRule ^logout$ login.php?action=logout [L]
+RewriteRule ^profile$ /menu.php?s=profile [L]
+RewriteRule ^upload-subtitle$ /menu.php?s=upload-subtitle [L]
+RewriteRule ^copy-drive$ /menu.php?s=copy-drive [L]
+RewriteRule ^upload-link$ /menu.php?s=upload-link [L]
+RewriteRule ^upload-file$ /menu.php?s=upload-file [L]
+RewriteRule ^shared-file$ /menu.php?s=shared-file [L]
+RewriteRule ^file-manager$ /menu.php?s=file-manager [L]
+RewriteRule ^user-manager$ /menu.php?s=user-manager [L]
+RewriteRule ^upload-folder$ /menu.php?s=upload-folder [L]
+RewriteRule ^broken$ /menu.php?s=broken [L]
+RewriteRule ^setting$ /menu.php?s=setting [L]
+RewriteRule ^page/terms-conditions$ page.php?s=terms-conditions [L]
+RewriteRule ^page/privacy-policy$ page.php?s=privacy-policy [L]
+RewriteRule ^page/copyright-policy$ page.php?s=copyright-policy [L]
+RewriteRule ^file/([^/]*)$ download.php?id=$1 [L]
+RewriteRule ^stream/([^/]*)$ multi.php?id=$1 [L]
+RewriteRule ^ajax/([a-zA-Z0-9]+)$ ajax.php?ajax=$1 [L]
+RewriteRule ^secure/([^/]*)$ secure.php?id=$1 [L]
+RewriteRule ^image/([^/]*)$ secure.php?poster=$1 [L]
